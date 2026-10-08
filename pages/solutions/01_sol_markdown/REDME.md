@@ -5,17 +5,17 @@
 W tej sekcji zajmujemy się wstępną analizą danych. Nasz zespół odkrył, że **kluczowy współczynnik konwersji** wzrasta liniowo w czasie, co jest bardzo obiecującym wynikiem. Warto również zauważyć, że *wstępne założenia projektowe* okazały się w pełni trafne, a ~~stara metoda regresji~~ została całkowicie zastąpiona nowym podejściem. W obliczeniach pomocny bywa wzór na prostą \(y = ax + b\), gdzie współczynnik kierunkowy określa dynamikę zmian.
 
 Oto wycentrowany wzór na funkcję gęstości standardowego rozkładu normalnego:
-\[f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}x^2}\]
+$$f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}x^2}$$
 
 ### Kroki Algorytmu i Narzędzia
 
 W ramach tej podsekcji konfigurujemy środowisko pracy. Do uruchomienia obliczeń wykorzystujemy platformę [Google Colab](http://colab.research.google.com). Podczas estymacji parametrów obliczamy błąd średniokwadratowy za pomocą równania \(MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2\), a weryfikację istotności opieramy o statystykę \(t = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}\).
 
 Poniżej znajduje się blokowy zapis transformacji Fouriera:
-\[\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx\]
+$$\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx$$
 
 Oraz równanie macierzowe dla układu równań liniowych:
-\[\mathbf{A}\mathbf{x} = \mathbf{b}\]
+$$\mathbf{A}\mathbf{x} = \mathbf{b}$$
 
 #### Lista zadań (Checklista)
 - [x] Zebranie danych testowych
