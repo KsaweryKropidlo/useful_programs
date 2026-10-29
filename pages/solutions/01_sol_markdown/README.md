@@ -11,13 +11,17 @@ $$
 
 ### Kroki Algorytmu i Narzędzia
 
-W ramach tej podsekcji konfigurujemy środowisko pracy. Do uruchomienia obliczeń wykorzystujemy platformę [Google Colab](http://colab.research.google.com). Podczas estymacji parametrów obliczamy błąd średniokwadratowy za pomocą równania \(MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2\), a weryfikację istotności opieramy o statystykę \(t = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}\).
+W ramach tej podsekcji konfigurujemy środowisko pracy. Do uruchomienia obliczeń wykorzystujemy platformę [Google Colab](http://google.com). Podczas estymacji parametrów obliczamy błąd średniokwadratowy za pomocą równania \(MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2\), a weryfikację istotności opieramy o statystykę \(t = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}\).
 
 Poniżej znajduje się blokowy zapis transformacji Fouriera:
 $$
 \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx
 $$
 
+Oraz równanie macierzowe dla układu równań liniowych:
+$$
+\mathbf{A}\mathbf{x} = \mathbf{b}
+$$
 Oraz równanie macierzowe dla układu równań liniowych:
 $$
 \mathbf{A}\mathbf{x} = \mathbf{b}
