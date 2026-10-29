@@ -1,21 +1,14 @@
-def oblicz_srednia(wartosci):
-	if not wartosci:
-		return None
-	return sum(wartosci) / len(wartosci)
+import random
+import turtle
 
+turtle.bgcolor("black")
+turtle.colormode(255)
+turtle.speed(0)
 
-def main():
-	temperatury = [18.5, 21.0, 19.5, 22.0, 20.0]
-	srednia = oblicz_srednia(temperatury)
+for x in range(500):
+	r, b, g = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
+	turtle.pencolor(r, g, b)
+	turtle.fd(x + 50)
+	turtle.rt(91)
 
-	print("Pomiary temperatury:", temperatury)
-	if srednia is None:
-		print("Brak pomiarow do obliczenia sredniej.")
-		return
-
-	print(f"Srednia temperatura: {srednia:.1f} C")
-	print(f"Najwyzsza temperatura: {max(temperatury):.1f} C")
-
-
-if __name__ == "__main__":
-	main()
+turtle.exitonclick()
