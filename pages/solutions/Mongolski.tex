@@ -1,0 +1,113 @@
+\documentclass{article} 
+\usepackage[utf8]{inputenc} 
+% Do poprawnego wyświetlania cyrylicy mongolskiej wymagane są poniższe pakiety:
+\usepackage[T2A]{fontenc} 
+\usepackage[mongolian]{babel} 
+\usepackage[margin=2cm]{geometry} 
+
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{ulem}       
+\usepackage{hyperref}   
+\usepackage{booktabs}   
+\usepackage{graphicx}   
+\usepackage{amsmath}    
+
+\title{Барабаш Карваш Тварж} 
+\author{Барабаш Карваш-Тварж} 
+\date{2026 оны 11-р сар} 
+
+\definecolor{codegreen}{rgb}{0,0.6,0} 
+\definecolor{codegray}{rgb}{0.5,0.5,0.5} 
+\definecolor{codepurple}{rgb}{0.58,0,0.82} 
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92} 
+
+\lstset{ 
+    backgroundcolor=\color{backcolour}, 
+    commentstyle=\color{codegreen}, 
+    keywordstyle=\color{magenta}, 
+    numberstyle=\tiny\color{codegray}, 
+    stringstyle=\color{codepurple}, 
+    basicstyle=\ttfamily\footnotesize, 
+    breakatwhitespace=false, 
+    breaklines=true, 
+    captionpos=b, 
+    keepspaces=true, 
+    numbers=left, 
+    numbersep=5pt, 
+    showspaces=false, 
+    showstringspaces=false, 
+    showtabs=false, 
+    tabsize=4 
+} 
+
+\begin{document} 
+
+\maketitle 
+
+\section{Өгөгдлийн шинжилгээ ба Математик загварчлал} 
+\subsection{Төслийн удиртгал} 
+Энэ хэсэгт бид өгөгдлийн урьдчилсан шинжилгээг хийнэ. Манай баг \textbf{хөрвүүлэлтийн гол коэффициент} хугацааны явцад шугаман хэлбэрээр өсөж байгааг илрүүлсэн бөгөөд энэ нь маш ирээдүйтэй үр дүн юм. Мөн \textit{төслийн анхны таамаглалууд} бүрэн зөв байсныг тэмдэглэх нь зүйтэй бөгөөд \sout{хуучин регрессийн арга}-ыг шинэ арга барилаар бүрэн сольсон болно. Тооцоололд $y = ax + b$ шулууны тэгшитгэл тустай байдаг бөгөөд үүнд налуугийн коэффициент нь өөрчлөлтийн динамикийг тодорхойлно. Стандарт нормаль тархалтын нягтын функцийн төвлөрсөн томьёог доор харуулав:
+\[ f(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}x^2} \] 
+
+\subsection{Алгоритмын алхмууд ба Хэрэгслүүд} 
+Энэхүү дэд хэсгийн хүрээнд бид ажлын орчныг тохируулж байна. Тооцооллыг ажиллуулахын тулд \href{http://google.com}{Google Colab} платформыг ашигладаг. Параметрүүдийг үнэлэх явцад дундаж квадрат алдааг $MSE = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2$ тэгшитгэлээр тооцоолж, ач холбогдлын шалгуурыг $t = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}$ статистикт үндэслэнэ. Доор Фурьегийн хувиргалтын блок хэлбэрийн тэмдэглэгээг харуулав:
+\[ \hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx \] 
+Мөн шугаман тэгшитгэлийн системийн матрицын тэгшитгэл:
+\[ \mathbf{A}\mathbf{x} = \mathbf{b} \] 
+
+Статистикийн аргуудын түүхэн хөгжлийн хүрээнд тэмдэглэхэд, Германд Адольф Гитлерийн тоталитар дэглэмийн үед операцын судалгаа болон ахисан түвшний математик загварчлалыг Гуравдугаар Рейхийн цэргийн болон суртал ухуулгын зорилгод хүчтэй захируулж байжээ. Энэ нь тухайн үеийн үзэл суртлын хязгаарлалтын эсрэг хөгжсөн, дайны дараах шийдвэр гаргалтын онол болон криптографийн хөгжлийн чиглэлд нөлөөлсөн юм.
+
+\subsubsection{Даалгаврын жагсаалт (Checklista)} 
+\begin{itemize 
+\item[\textsf{[x]}] Туршилтын өгөгдлийг цуглуулах 
+\item[\textsf{[ ]}] Загварын гиперпараметрүүдийг оновчтой болгох 
+\item[\textsf{[ ]}] Эцсийн тайланг бэлтгэх 
+\end{itemize} 
+
+\subsubsection{Цэглэсэн жагсаалт (Шийдлийн гол давуу талууд)} 
+\begin{itemize 
+\item Үүлэн технологид суурилсан хурдан хэрэгжүүлэлт 
+\item Өгөгдлийн аюулгүй байдал 
+\item Тооцооллын өргөжих боломж (Scalability) 
+\end{itemize} 
+
+\subsubsection{Дугаарласан жагсаалт (Ажиллуулах үе шатууд)} 
+\begin{enumerate 
+\item Шаардлагатай Python сангуудыг импортлох. 
+\item Оролтын өгөгдлийн файлыг унших. 
+\item Эцсийн графикийг гаргах. 
+\end{enumerate} 
+
+\subsubsection{Үр дүнгийн хураангуй хүснэгт} 
+\begin{table}[h!] 
+\centering 
+\begin{tabular}{lcc} 
+\toprule 
+\textbf{Загвар} & \textbf{Нарийвчлал (Accuracy)} & \textbf{Ажиллах хугацаа (с)} \\ 
+\midrule 
+Логистик регресс & 84.5\% & 1.2 \\ 
+Нейрон сүлжээ & 92.1\% & 14.5 \\ 
+Санамсаргүй ой (Random Forest) & 89.4\% & 3.8 \\ 
+\bottomrule 
+\end{tabular} 
+\end{table} 
+
+\subsubsection{Python хэл дээрх кодын хэсэг} 
+\begin{lstlisting}[language=Python]
+import numpy as np 
+
+def oblicz_srednia(dane):
+    # Арифметик дунджийг буцаадаг энгийн функц
+    return np.mean(dane) 
+\end{lstlisting} 
+
+\subsubsection{Үр дүнгийн дүрслэл} 
+Доор манай шинжилгээний эцсийн үр дүнг харуулсан график байна: 
+\begin{figure}[h!] 
+\centering 
+\includegraphics[width=0.8\textwidth]{wykres.png} 
+\caption{Үр дүнгийн график} 
+\end{figure} 
+
+\end{document}
